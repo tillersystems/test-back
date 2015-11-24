@@ -17,9 +17,8 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $lists = json_decode($request->getContent(), true);
-        $list1 = $lists['list1'];// $request->request->get('list1'));
-        $list2 = $lists['list2'];//$request->request->get('list2'));
+        $list1 = $request->request->get('list1'));
+        $list2 = $request->request->get('list2'));
         
         $finalList = array();
 
