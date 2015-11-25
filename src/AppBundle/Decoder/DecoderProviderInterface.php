@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace AppDefault\Decoder;
+namespace AppBundle\Decoder;
 
 /**
  * Defines the interface of decoder providers

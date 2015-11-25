@@ -17,8 +17,8 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $list1 = $request->request->get('list1'));
-        $list2 = $request->request->get('list2'));
+        $list1 = $request->request->get('list1');
+        $list2 = $request->request->get('list2');
         
         $finalList = array();
 
@@ -28,6 +28,7 @@ class DefaultController extends Controller
          * elements. For exemple: given two lists [A, B, C] and [1, 2, 3], the 
          * results sould be [A, 1, B, 2, C, 3]
          */
+        
         return new JsonResponse($finalList, JsonResponse::HTTP_OK);
     }
 }

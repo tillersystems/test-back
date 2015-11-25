@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace AppDefault\Decoder;
+namespace AppBundle\Decoder;
 
 /**
  * Decodes JSON data

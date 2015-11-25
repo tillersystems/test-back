@@ -12,7 +12,7 @@
 namespace AppBundle\Decoder;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
-use AppDefault\Decoder\DecoderProviderInterface;
+use AppBundle\Decoder\DecoderProviderInterface;
 
 /**
  * Provides encoders through the Symfony2 DIC
