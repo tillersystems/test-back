@@ -3,6 +3,8 @@
 ## What should I do ?
 Write a webservice that combines two lists by alternatingly taking elements. For exemple: given two lists [A, B, C] and [1, 2, 3], the results sould be [A, 1, B, 2, C, 3]
 
+ps: you're on a git, don't forget it ;)
+
 ## Where should I write my code ?
 ```
     //src/AppBundle/Controller/DefaultController
