@@ -19,16 +19,32 @@ class DefaultController extends Controller
     {
         $list1 = $request->request->get('list1');
         $list2 = $request->request->get('list2');
-        
-        $finalList = array();
 
-        /**
-         * @TODO: 
-         * Write a webservice that combines two lists by alternatingly taking 
-         * elements. For exemple: given two lists [A, B, C] and [1, 2, 3], the 
-         * results sould be [A, 1, B, 2, C, 3]
-         */
-        
+        if (!is_array($list1) || !is_array($list2)) {
+            return new JsonResponse(['error' => 'Bad parameters.'], JsonResponse::HTTP_BAD_REQUEST);
+        }
+
+        $finalList = $this->arrayCombine($list1, $list2);
+
         return new JsonResponse($finalList, JsonResponse::HTTP_OK);
+    }
+
+    /**
+     * Combine two arrays.
+     * 
+     * @param array $list1
+     * @param array $list2
+     */
+    private function arrayCombine(array $list1, array $list2)
+    {
+        $combinedList = array();
+        $minLength = min(count($list1), count($list2));
+
+        for ($i = 0; $i < $minLength; $i++) {
+            $combinedList[] = array_shift($list1);
+            $combinedList[] = array_shift($list2);
+        }
+
+        return array_merge($combinedList, $list1, $list2);
     }
 }
