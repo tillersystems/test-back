@@ -39,5 +39,22 @@ As an example, here are the first 10 Fibonnaci numbers: [0, 1, 1, 2, 3, 5, 8, 13
 
 [Link](https://github.com/tillersystems/test-back/wiki/Test-4)
 
+## Test 5
+
+Write a function that given a list of non negative integers, arranges them such that they form the largest possible number. 
+
+For example, given [50, 2, 1, 9] the largest formed number is 95021.
+
+[Link](https://github.com/tillersystems/test-back/wiki/Test-5)
+
+## Test 6
+
+Write a program that outputs all possibilities to put + or - or nothing between the numbers 1, 2, ..., 9 (in this order) such that the result is always 100. 
+
+For example: 1 + 2 + 34 – 5 + 67 – 8 + 9 = 100.
+Formatted as "1+2+34-5+67-8+9".
+
+[Link](https://github.com/tillersystems/test-back/wiki/Test-6)
+
 ps: you're on a git, don't forget it ;)
 
