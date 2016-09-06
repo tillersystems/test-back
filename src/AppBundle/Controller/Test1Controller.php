@@ -22,11 +22,12 @@ class Test1Controller extends Controller
         /**
          * @TODO: 
          * Write three functions that compute the sum of the numbers in a given 
-         * list using a for-loop, a while-loop, and recursion.
+         * list using a for-loop, foreach-loop, a while-loop, and recursion.
          */
         
         $result = array(
             'forLoop' => $this->forLoopSum($list),
+            'foreachLoop' => $this->foreachLoopSum($list),
             'whileLoop' => $this->whileLoopSum($list),
             'recursion' => $this->recursionSum($list),
         );
@@ -41,6 +42,17 @@ class Test1Controller extends Controller
      * @return int
      */
     private function forLoopSum(array $list)
+    {
+        return -1;
+    }
+    
+    /**
+     * For-loop solution.
+     * 
+     * @param array $list
+     * @return int
+     */
+    private function foreachLoopSum(array $list)
     {
         return -1;
     }
