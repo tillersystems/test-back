@@ -22,11 +22,12 @@ class Test1Controller extends Controller
         /**
          * @TODO: 
          * Write three functions that compute the sum of the numbers in a given 
-         * list using a for-loop, a while-loop, and recursion.
+         * list using a for-loop, foreach-loop, a while-loop, and recursion.
          */
         
         $result = array(
             'forLoop' => $this->forLoopSum($list),
+            'foreachLoop' => $this->foreachLoopSum($list),
             'whileLoop' => $this->whileLoopSum($list),
             'recursion' => $this->recursionSum($list),
         );
@@ -42,7 +43,27 @@ class Test1Controller extends Controller
      */
     private function forLoopSum(array $list)
     {
-        return -1;
+        $sum = 0;
+        $length = count($list);
+        for ($i = 0; $i < $length; ++$i) {
+            $sum += $list[$i];
+        }
+        return $sum;
+    }
+    
+    /**
+     * Foreach-loop solution.
+     * 
+     * @param array $list
+     * @return int
+     */
+    private function foreachLoopSum(array $list)
+    {
+        $sum = 0;
+        foreach ($list as $value) {
+            $sum += $value;
+        }
+        return $sum;
     }
     
     /**
@@ -53,7 +74,11 @@ class Test1Controller extends Controller
      */
     private function whileLoopSum(array $list)
     {
-        return -1;
+        $sum = 0;
+        while (!empty($list)) {
+            $sum += array_pop($list);
+        }
+        return $sum;
     }
     
     /**
@@ -64,6 +89,10 @@ class Test1Controller extends Controller
      */
     private function recursionSum(array $list)
     {
-        return -1;
+        if (empty($list)) {
+            return 0;
+        } else {
+            return array_pop($list) + $this->recursionSum($list);
+        }
     }
 }
