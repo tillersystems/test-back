@@ -4,6 +4,9 @@ namespace AppBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
+/**
+ * @group test1
+ */
 class Test1ControllerTest extends WebTestCase
 {
     /**
@@ -16,7 +19,7 @@ class Test1ControllerTest extends WebTestCase
         $client->request('POST', '/test1', ['list' => $list]);
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $actual = json_decode($client->getResponse()->getContent());
+        $actual = json_decode($client->getResponse()->getContent(), true);
         $this->assertEquals($expected, $actual);
     }
     
