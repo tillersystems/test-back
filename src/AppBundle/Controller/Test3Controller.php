@@ -37,7 +37,7 @@ class Test3Controller extends Controller
          * Write a webservice that calculate the highest path sum in a matrix
          * following this rule (move only RIGTH or DOWN)
          *  
-         * In this exemple : 
+         * In this example : 
          *     [*2  3  2  1 ]
          *     [*5 *2 *3  1 ]
          *     [ 1  2 *2 *1 ] => 2 + 5 + 2 + 3 + 2 + 1 => 15
