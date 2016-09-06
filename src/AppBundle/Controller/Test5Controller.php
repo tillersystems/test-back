@@ -5,8 +5,8 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class Test5Controller extends Controller
 {
@@ -30,6 +30,6 @@ class Test5Controller extends Controller
         
         $result = null;
         
-        return new JsonResponse($result, JsonResponse::HTTP_OK);
+        return new Response($result, Response::HTTP_OK);
     }
 }
