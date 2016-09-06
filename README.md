@@ -31,5 +31,13 @@ following this rule (move only RIGTH or DOWN)
 
 [Link](https://github.com/tillersystems/test-back/wiki/Test-3)
 
+## Test 4
+
+Write a webservice that computes the list of the first n Fibonacci numbers. By definition, the first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent number is the sum of the previous two.
+
+As an example, here are the first 10 Fibonnaci numbers: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34].
+
+[Link](https://github.com/tillersystems/test-back/wiki/Test-4)
+
 ps: you're on a git, don't forget it ;)
 
