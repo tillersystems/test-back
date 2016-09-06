@@ -8,14 +8,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-class DefaultController extends Controller
+class Test2Controller extends Controller
 {
 
     /**
-     * @Route("/", name="homepage")
+     * @Route("/test2", name="test2")
      * @Method({"POST"})
      */
-    public function indexAction(Request $request)
+    public function test2Action(Request $request)
     {
         $list1 = $request->request->get('list1');
         $list2 = $request->request->get('list2');
@@ -25,7 +25,7 @@ class DefaultController extends Controller
         }
 
         $finalList = $this->arrayCombine($list1, $list2);
-
+        
         return new JsonResponse($finalList, JsonResponse::HTTP_OK);
     }
 
