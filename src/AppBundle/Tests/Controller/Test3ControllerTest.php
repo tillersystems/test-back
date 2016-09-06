@@ -13,15 +13,15 @@ class Test3ControllerTest extends WebTestCase
     /**
      * @dataProvider provider
      */
-    public function testSuccess($matrix, $width, $length, $expected)
+    public function testSuccess($matrix, $width, $height, $expected)
     {
         $client = static::createClient();
 
-        $client->request('POST', '/test3', ['matrix' => $matrix, 'width' => $width, 'length' => $length]);
+        $client->request('POST', '/test3', ['matrix' => $matrix, 'width' => $width, 'height' => $height]);
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $actualList = json_decode($client->getResponse()->getContent());
-        $this->assertEquals($expected, $actualList);
+        $actual = intval($client->getResponse()->getContent());
+        $this->assertEquals($expected, $actual);
     }
 
     public function testFailure()
@@ -50,7 +50,7 @@ class Test3ControllerTest extends WebTestCase
                 0,
             ],
             'Unique value matrix' => [
-                [2],
+                [[2]],
                 1,
                 1,
                 2,
