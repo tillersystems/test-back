@@ -16,7 +16,7 @@ Write a webservice that combines two lists by alternatingly taking elements. For
 
 Let's A be a matrix
 ```
-A = [ 2  3  2  1 ]
+A = [ 2  3  2  1 ]  Allowed moves : → or ↓
     [ 5  2  3  1 ]
     [ 1  2  2  1 ]
 width = 4
