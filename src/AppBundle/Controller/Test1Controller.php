@@ -67,6 +67,17 @@ class Test1Controller extends Controller
     }
     
     /**
+     * For-loop solution.
+     * 
+     * @param array $list
+     * @return int
+     */
+    private function foreachLoopSum(array $list)
+    {
+        return -1;
+    }
+    
+    /**
      * While-loop solution.
      * 
      * @param array $list
