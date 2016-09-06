@@ -79,6 +79,15 @@ class Test1ControllerTest extends WebTestCase
                     'recursion'   => 11.35,
                 ]
             ],
+            'Number string list' => [
+                [2, '3.14'],
+                [
+                    'forLoop'     => 5.14,
+                    'foreachLoop' => 5.14,
+                    'whileLoop'   => 5.14,
+                    'recursion'   => 5.14,
+                ]
+            ],
             'Letter list' => [
                 [2, 'a', 3, 'H'],
                 [
