@@ -15,11 +15,13 @@ Write a webservice that combines two lists by alternatingly taking elements. For
 ## Test 3
 
 Let's A be a matrix
+```
 A = [ 2  3  2  1 ]
     [ 5  2  3  1 ]
     [ 1  2  2  1 ]
 width = 4
 heigh = 3
+```
  
 You can move RIGTH or DOWN.
 You cannot move UP or LEFT. 
