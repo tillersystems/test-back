@@ -20,7 +20,7 @@ class Test4ControllerTest extends WebTestCase
         $client->request('POST', '/test4', ['n' => $n]);
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $actual = intval($client->getResponse()->getContent());
+        $actual = json_decode($client->getResponse()->getContent());
         $this->assertEquals($expected, $actual);
     }
 
@@ -35,15 +35,15 @@ class Test4ControllerTest extends WebTestCase
     public function provider()
     {
         return [
-            'Empty matrix' => [
+            '0' => [
                 0,
                 [],
             ],
-            'Unique value matrix' => [
+            '1' => [
                 1,
                 [0],
             ],
-            'Unique value matrix' => [
+            '10' => [
                 10,
                 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34],
             ],
