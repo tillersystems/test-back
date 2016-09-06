@@ -18,12 +18,10 @@ class Test1Controller extends Controller
     public function test1Action(Request $request)
     {
         $list = $request->request->get('list');
-
-        /**
-         * @TODO: 
-         * Write three functions that compute the sum of the numbers in a given 
-         * list using a for-loop, foreach-loop, a while-loop, and recursion.
-         */
+        
+        if (!is_array($list)) {
+            return new JsonResponse(['error' => 'Bad parameters.'], JsonResponse::HTTP_BAD_REQUEST);
+        }
         
         $result = array(
             'forLoop' => $this->forLoopSum($list),
@@ -64,17 +62,6 @@ class Test1Controller extends Controller
             $sum += $value;
         }
         return $sum;
-    }
-    
-    /**
-     * For-loop solution.
-     * 
-     * @param array $list
-     * @return int
-     */
-    private function foreachLoopSum(array $list)
-    {
-        return -1;
     }
     
     /**
