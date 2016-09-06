@@ -8,19 +8,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-class DefaultController extends Controller
+class Test2Controller extends Controller
 {
 
     /**
-     * @Route("/", name="homepage")
+     * @Route("/test2", name="test2")
      * @Method({"POST"})
      */
-    public function indexAction(Request $request)
+    public function test2Action(Request $request)
     {
         $list1 = $request->request->get('list1');
         $list2 = $request->request->get('list2');
-        
-        $finalList = array();
 
         /**
          * @TODO: 
@@ -28,6 +26,8 @@ class DefaultController extends Controller
          * elements. For exemple: given two lists [A, B, C] and [1, 2, 3], the 
          * results sould be [A, 1, B, 2, C, 3]
          */
+        
+        $finalList = array();
         
         return new JsonResponse($finalList, JsonResponse::HTTP_OK);
     }

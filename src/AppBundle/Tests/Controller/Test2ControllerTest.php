@@ -4,7 +4,10 @@ namespace AppBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class DefaultControllerTest extends WebTestCase
+/**
+ * @group test2
+ */
+class Test2ControllerTest extends WebTestCase
 {
     /**
      * @dataProvider provider
@@ -13,7 +16,7 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $client->request('POST', '/', ['list1' => $list1, 'list2' => $list2]);
+        $client->request('POST', '/test2', ['list1' => $list1, 'list2' => $list2]);
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $actualList = json_decode($client->getResponse()->getContent());
@@ -24,8 +27,8 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $client->request('POST', '/');
-        $this->assertNotEquals(200, $client->getResponse()->getStatusCode());
+        $client->request('POST', '/test2');
+        $this->assertNotEquals(500, $client->getResponse()->getStatusCode());
     }
     
     public function provider()
