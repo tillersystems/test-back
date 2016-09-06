@@ -45,6 +45,6 @@ class Test3Controller extends Controller
         
         $result = -1;
         
-        return new Response($result, JsonResponse::HTTP_OK);
+        return new Response($result, Response::HTTP_OK);
     }
 }
