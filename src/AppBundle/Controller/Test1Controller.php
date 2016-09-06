@@ -21,7 +21,7 @@ class Test1Controller extends Controller
 
         /**
          * @TODO: 
-         * Write three functions that compute the sum of the numbers in a given 
+         * Write a webservice that compute the sum of the numbers in a given 
          * list using a for-loop, foreach-loop, a while-loop, and recursion.
          */
         
@@ -47,7 +47,7 @@ class Test1Controller extends Controller
     }
     
     /**
-     * For-loop solution.
+     * Foreach-loop solution.
      * 
      * @param array $list
      * @return int
