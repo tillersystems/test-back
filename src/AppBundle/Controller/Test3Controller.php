@@ -7,9 +7,30 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Test3Controller extends Controller
 {
+    /**
+     * Matrix
+     * 
+     * @var array 
+     */
+    private $matrix;
+
+    /**
+     * Width
+     * 
+     * @var int 
+     */
+    private $width;
+
+    /**
+     * Height
+     * 
+     * @var int 
+     */
+    private $height;
 
     /**
      * @Route("/test3", name="test3")
@@ -17,34 +38,23 @@ class Test3Controller extends Controller
      */
     public function test3Action(Request $request)
     {
-        $matrix = $request->request->get('matrix');
-        $height = $request->request->get('height');
-        $width = $request->request->get('width');
+        $this->matrix = $request->request->get('matrix');
+        $this->width = $request->request->get('width');
+        $this->height = $request->request->get('height');
 
-        /**
-         * @TODO: 
-         * 
-         * Let's A be a matrix
-         * A = [ 2  3  2  1 ]
-         *     [ 5  2  3  1 ]
-         *     [ 1  2  2  1 ]
-         * width = 4
-         * heigh = 3
-         * 
-         * You can move RIGTH or DOWN.
-         * You cannot move UP or LEFT. 
-         * 
-         * Write a webservice that calculate the highest path sum in a matrix
-         * following this rule (move only RIGTH or DOWN)
-         *  
-         * In this exemple : 
-         *     [*2  3  2  1 ]
-         *     [*5 *2 *3  1 ]
-         *     [ 1  2 *2 *1 ] => 2 + 5 + 2 + 3 + 2 + 1 => 15
-         */
-        
-        $result = -1;
-        
-        return new Response($result, JsonResponse::HTTP_OK);
+        $result = $this->calculate(0, 0);
+
+        return new Response($result, Response::HTTP_OK);
+    }
+
+    private function calculate($x, $y)
+    {
+        if ($x >= $this->width || $y >= $this->height) {
+            return 0;
+        } elseif (!isset($this->matrix[$y][$x])) {
+            throw new HttpException(Response::HTTP_BAD_REQUEST, 'Width or Heigth to big.');
+        } else {
+            return $this->matrix[$y][$x] + max($this->calculate($x + 1, $y), $this->calculate($x, $y + 1));
+        }
     }
 }
