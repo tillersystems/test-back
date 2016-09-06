@@ -20,6 +20,14 @@ class Test1ControllerTest extends WebTestCase
         $this->assertEquals($expected, $actual);
     }
     
+    public function testFailure()
+    {
+        $client = static::createClient();
+
+        $client->request('POST', '/test1');
+        $this->assertNotEquals(500, $client->getResponse()->getStatusCode());
+    }
+    
     public function provider()
     {
         return [
