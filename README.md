@@ -1,34 +1,33 @@
 # Tiller Test Dev Backend
 
-## What should I do ?
+## Test 1
+
+Write a webservice that compute the sum of the numbers in a given list using a for-loop, foreach-loop, a while-loop, and recursion.
+
+[Link](https://github.com/tillersystems/test-back/wiki/Test-1)
+
+## Test 2
+
 Write a webservice that combines two lists by alternatingly taking elements. For exemple: given two lists [A, B, C] and [1, 2, 3], the results sould be [A, 1, B, 2, C, 3]
+
+[Link](https://github.com/tillersystems/test-back/wiki/Test-2)
+
+## Test 3
+
+Let's A be a matrix
+A = [ 2  3  2  1 ]
+    [ 5  2  3  1 ]
+    [ 1  2  2  1 ]
+width = 4
+heigh = 3
+ 
+You can move RIGTH or DOWN.
+You cannot move UP or LEFT. 
+
+Write a webservice that calculate the highest path sum in a matrix
+following this rule (move only RIGTH or DOWN)
+
+[Link](https://github.com/tillersystems/test-back/wiki/Test-3)
 
 ps: you're on a git, don't forget it ;)
 
-## Where should I write my code ?
-```
-    //src/AppBundle/Controller/DefaultController
-    
-    public function indexAction(Request $request)
-    {
-        $list1 = $request->request->get('list1');
-        $list2 = $request->request->get('list2');
-        
-        $finalList = array();
-
-        /**
-         * @TODO: 
-         * Write a webservice that combines two lists by alternatingly taking 
-         * elements. For exemple: given two lists [A, B, C] and [1, 2, 3], the 
-         * results sould be [A, 1, B, 2, C, 3]
-         */
-        
-        return new JsonResponse($finalList, JsonResponse::HTTP_OK);
-    }
-```
-
-## How can I test my code ?
-```bash
-$ curl -H "Content-Type: application/json" -X POST -d '{ "list1": ["a", "b", "c"], "list2": [1, 2, 3] }' test.local
-["a",1,"b",2,"c",3]
-```
