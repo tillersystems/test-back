@@ -5,8 +5,9 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Test3Controller extends Controller
@@ -41,6 +42,10 @@ class Test3Controller extends Controller
         $this->matrix = $request->request->get('matrix');
         $this->width = $request->request->get('width');
         $this->height = $request->request->get('height');
+
+        if (!is_array($this->matrix)) {
+            return new JsonResponse(['error' => 'Bad parameters.'], JsonResponse::HTTP_BAD_REQUEST);
+        }
 
         $result = $this->calculate(0, 0);
 

@@ -54,6 +54,8 @@ class Test6ControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $actual = json_decode($client->getResponse()->getContent());
         
+        $this->assertTrue(is_array($actual), 'Result is not an array');
+        
         sort($expected);
         sort($actual);
         
