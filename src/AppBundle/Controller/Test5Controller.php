@@ -28,7 +28,7 @@ class Test5Controller extends Controller
          * For example, given [50, 2, 1, 9] the largest formed number is 95021.
          */
         
-        $result = null;
+        $result = -1;
         
         return new Response($result, Response::HTTP_OK);
     }

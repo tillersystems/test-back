@@ -29,6 +29,7 @@ class Test4ControllerTest extends WebTestCase
         $client = static::createClient();
 
         $client->request('POST', '/test4');
+        $this->assertNotEquals(200, $client->getResponse()->getStatusCode());
         $this->assertNotEquals(500, $client->getResponse()->getStatusCode());
     }
 
