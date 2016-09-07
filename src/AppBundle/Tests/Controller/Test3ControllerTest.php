@@ -37,7 +37,7 @@ class Test3ControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $client->request('POST', '/test3', ['matrix' => [], 'width' => 1, 'length' => 1]);
+        $client->request('POST', '/test3', ['matrix' => [], 'width' => 1, 'height' => 1]);
         $this->assertNotEquals(200, $client->getResponse()->getStatusCode());
         $this->assertNotEquals(500, $client->getResponse()->getStatusCode());
     }
