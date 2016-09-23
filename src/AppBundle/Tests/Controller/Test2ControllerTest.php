@@ -34,6 +34,14 @@ class Test2ControllerTest extends WebTestCase
     
     public function provider()
     {
+        $list = [];
+        $expected = [];
+        for ($i = 0; $i < 0xffff; ++$i) {
+            $list[] = $i;
+            $expected[] = $i;
+            $expected[] = $i;
+        }
+                
         return [
             'two empty list' => [
                 [],
@@ -54,6 +62,11 @@ class Test2ControllerTest extends WebTestCase
                 ["a", "b", "c"],
                 [1, 2, 3],
                 ["a", 1, "b", 2, "c", 3],
+            ],
+            'same length longeur' => [
+                $list,
+                $list,
+                $expected,
             ],
             'first is bigger' => [
                 ["a", "b", "c", "d", "e"],
