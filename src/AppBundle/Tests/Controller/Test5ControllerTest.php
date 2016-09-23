@@ -48,6 +48,10 @@ class Test5ControllerTest extends WebTestCase
                 [2, 1],
                 21,
             ],
+            '4321' => [
+                [4, 3, 21],
+                4321,
+            ],
             '95021' => [
                 [50, 2, 1, 9],
                 95021,
