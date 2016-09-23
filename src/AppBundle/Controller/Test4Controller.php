@@ -23,14 +23,17 @@ class Test4Controller extends Controller
             return new JsonResponse(['error' => 'Bad parameters.'], JsonResponse::HTTP_BAD_REQUEST);
         }
         
-        if ($n == 0) {
+        if ($n <= 0) {
             return new JsonResponse([], JsonResponse::HTTP_OK);
-        } elseif ($n == 1) {
-            return new JsonResponse([0], JsonResponse::HTTP_OK);
         }
         
-        $result = [0, 1];
-        for ($i = 2; $i < $n; ++$i) {
+        $result = [];
+        $first20 = [0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,4181,6765,10946,17711,28657,46368];
+        for ($i = 0; $i < $n && $i < 25; ++$i) {
+            $result[] = $first20[$i];
+        }
+        
+        for ($i = 25; $i < $n; ++$i) {
             $result[] = $result[$i - 1] + $result[$i - 2];
         }
         
