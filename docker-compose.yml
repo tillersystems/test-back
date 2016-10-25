@@ -1,0 +1,16 @@
+php:
+    build: .docker/php-fpm
+    ports:
+        - 9001:9000
+    volumes:
+        - ./:/var/www/tiller-test
+
+nginx:
+    build: .docker/nginx
+    ports:
+        - 8081:80
+    links:
+        - php
+    volumes:
+        - ./app/logs/nginx/:/var/log/nginx
+        - ./:/var/www/tiller-test
