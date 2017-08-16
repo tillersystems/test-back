@@ -5,7 +5,6 @@
 ### Pre-requisite
 
 [docker](https://docs.docker.com/engine/installation/) `min version 1.12.2`
-
 [docker-compose](https://docs.docker.com/compose/install/) `min version 1.8.0`
 
 ### Docker compose
