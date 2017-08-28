@@ -1,5 +1,29 @@
 # Tiller Test Dev Backend
 
+## Installation
+
+### Pre-requisite
+
+* [docker](https://docs.docker.com/engine/installation/) `min version 1.12.2`
+* [docker-compose](https://docs.docker.com/compose/install/) `min version 1.8.0`
+
+### Docker compose
+
+First, you will have to pull the current repository.
+Inside the directory execute the followings commands:
+
+```bash
+docker-compose build
+docker-compose up -d
+```
+
+### Connect to the docker
+
+```bash
+docker exec -it back_php_1 bash
+```
+
+
 ## Test 1
 
 Write a webservice that compute the sum of the numbers in a given list using a for-loop, foreach-loop, a while-loop, and recursion.
