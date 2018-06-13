@@ -20,7 +20,7 @@ docker-compose up -d
 ### Connect to the docker
 
 ```bash
-docker exec -it back_php_1 bash
+docker exec -it testback_php_1 bash
 ```
 
 
