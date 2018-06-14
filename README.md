@@ -23,6 +23,12 @@ docker-compose up -d
 docker exec -it testback_php_1 bash
 ```
 
+### Install Symfony Env
+
+```bash
+cd /var/www/test-back
+composer install
+```
 
 ## Test 1
 
