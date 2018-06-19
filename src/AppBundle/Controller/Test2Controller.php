@@ -27,8 +27,18 @@ class Test2Controller extends Controller
          * results sould be [A, 1, B, 2, C, 3]
          */
         
-        $finalList = null;
-        
+        $finalList[]= null;
+
+        $n = 0;
+
+
+        while ($n < count($list1) && $n < count($list2)){
+            $finalList[] = $list1[$n];
+            $finalList[] = $list2[$n];
+            $n = $n + 1;
+        }
+        if (count($list1) == 0 || count($list2) == 0)
+            $finalList = null;
         return new JsonResponse($finalList, JsonResponse::HTTP_OK);
     }
 }
