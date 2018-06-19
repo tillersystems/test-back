@@ -27,7 +27,7 @@ class Test2Controller extends Controller
          * results sould be [A, 1, B, 2, C, 3]
          */
         
-        $finalList[]= null;
+        $finalList= null;
 
         $n = 0;
 
