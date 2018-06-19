@@ -79,6 +79,7 @@ class Test1Controller extends Controller
         while ($i < count($list))
         {
             $sum = $list[$i] + $sum;
+            $i = $i +1;
         }
         return $sum;
     }
@@ -91,6 +92,13 @@ class Test1Controller extends Controller
      */
     private function recursionSum(array $list)
     {
-       return -1;
+        if (count($list) == 0)
+            return -1;
+        $sum = $list[0];
+        if (count($list) == 1)
+            return ($sum);
+        unset($list[0]);
+        $list[0] = $list[0]+$sum;
+        return $this->recursionSum($list);
     }
 }
