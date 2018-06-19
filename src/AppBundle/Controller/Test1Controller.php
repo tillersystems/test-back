@@ -43,7 +43,13 @@ class Test1Controller extends Controller
      */
     private function forLoopSum(array $list)
     {
-        return -1;
+        if (sum($list) == 0)
+            return -1;
+        $sum = 0;
+        for ($i = 0; $i <= count($list); $i++) {
+            $sum = $list[$i] + $sum;
+        }
+        return $sum;
     }
     
     /**
@@ -54,7 +60,13 @@ class Test1Controller extends Controller
      */
     private function foreachLoopSum(array $list)
     {
-        return -1;
+        if (sum($list) == 0)
+            return -1;
+        $sum = 0;
+        foreach ($list as $value){
+            $sum = $value + $sum;
+        }
+        return $sum;
     }
     
     /**
@@ -65,7 +77,15 @@ class Test1Controller extends Controller
      */
     private function whileLoopSum(array $list)
     {
-        return -1;
+        if (sum($list) == 0)
+            return -1;
+        $i = 0;
+        $sum = 0;
+        while ($i < count($list))
+       {
+            $sum = $list[$i] + $sum;
+       }
+        return $sum;
     }
     
     /**
@@ -74,8 +94,16 @@ class Test1Controller extends Controller
      * @param array $list
      * @return int
      */
+
     private function recursionSum(array $list)
     {
-        return -1;
+        if (sum($list) == 0)
+            return -1;
+        $sum = $list[0];
+        if (count($list) == 1)
+            return ($sum);
+        unset($list[0]);
+        $list[0] = $list[0]+$sum;
+        return $this->recursionSum($list);
     }
 }
